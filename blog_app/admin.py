@@ -6,6 +6,8 @@ from blog_app.models import Category, Post
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')
     prepopulated_fields = {'slug': ('title',)}
+    # exclude = ('slug',)
+    # readonly_fields = ('views_count', 'slug')
 
 
 @admin.register(Post)
