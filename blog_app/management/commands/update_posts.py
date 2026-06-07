@@ -4,8 +4,8 @@ from blog_app.models import Post
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
-        parser.add_argument('post_id', type=int)
-        parser.add_argument('new_title', type=str)
+        parser.add_argument('--post_id', type=int)
+        parser.add_argument('--new_title', type=str)
 
     def handle(self, *args, **options):
         post_id = options['post_id']

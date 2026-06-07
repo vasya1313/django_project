@@ -17,7 +17,7 @@ create_post:
 	uv run manage.py create_post --title "$(title)" --content "$(content)"
 
 delete_post:
-	uv run manage.py delete_post $(id)
+	uv run manage.py delete_post --post_id $(id)
 
 update_post:
 	uv run manage.py update_posts --id $(id) --title "$(title)"
