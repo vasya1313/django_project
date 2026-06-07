@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from django.utils.text import slugify
+from slugify import slugify
 
 from blog_app.models import Post
 
@@ -19,7 +19,7 @@ class Command(BaseCommand):
         # Если слаг не передан, берем заголовок.
         # allow_unicode=True обязателен для поддержки русского языка
 
-        slug = slugify(options['title'], allow_unicode=True)
+        slug = slugify(options['title'])
 
 
         author_id = options['author_id']
