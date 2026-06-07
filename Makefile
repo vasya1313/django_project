@@ -12,3 +12,12 @@ migrate:
 
 superuser:
 	uv run manage.py createsuperuser
+
+create_post:
+	uv run manage.py create_post --title "$(title)" --content "$(content)"
+
+delete_post:
+	uv run manage.py delete_post $(id)
+
+update_post:
+	uv run manage.py update_posts --id $(id) --title "$(title)"
