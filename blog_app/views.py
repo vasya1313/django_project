@@ -1,54 +1,48 @@
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 
 from blog_app.models import Post, Category
 
 
 def index(request):
-    return HttpResponse("<h1>Hello World!</h1>")
+    # Получаем 5 последних опубликованных постов
+    posts = Post.objects.filter(publishes=True)[:5]
+    context = {
+        'posts' : posts
+    }
+    return render(request, 'blog/index.html', context)
 
 
 def posts_list(request):
     posts = Post.objects.filter(publishes=True)
-
-    content = "<h1>Опубликованные статьи</h1><br><br>"
-    for post in posts:
-        content += f"<a href='/posts/{post.slug}/'>{post.title}</a> ({post.created_at:%Y-%m-%d})<br>"
-
-    return HttpResponse(content)
+    context = {
+        'posts': posts
+    }
+    return render(request, 'blog/posts_list.html', context)
 
 
 def post_detail(request, post_slug):
-    post = get_object_or_404(Post, slug=post_slug)
-
-    content = f'''
-        <h1>{post.title}</h1>
-        <p>{post.author}</p>
-        <div>{post.content}</div>
-        <hr>
-        <a href="/posts/">Назад к статьям</a>
-        '''
-
-    return HttpResponse(content)
+    post = get_object_or_404(Post, slug=post_slug, publishes=True)
+    # В будущем здесь можно вызывать post.increase_views_count()
+    context = {
+        'post': post}
+    return render(request, 'blog/post_detail.html', context)
 
 
 def categories_list(request):
     categories = Category.objects.all()
+    context = {
+        'categories': categories
+    }
+    return render(request, 'blog/categories_list.html', context)
 
-    content = "<h1>Категории постов:</h1><ul>"
-    for category in categories:
-        content += f"<li><a href='/categories/{category.slug}/'>{category.title}</a></li>"
-    content += "</ul>"
-
-    return HttpResponse(content)
 
 def category_detail(request, category_slug):
-    category = get_object_or_404(Category, slug=category_slug)
-    posts = Post.objects.filter(category=category, publishes=True)
-
-    content = "<h1>Опубликованные статьи</h1><br><br>"
-    for post in posts:
-        content += f"<a href='/posts/{post.slug}/'>{post.title}</a> ({post.created_at:%Y-%m-%d})<br>"
-    content += "<hr>"
-    content += "<a href='/categories/'>Назад к категориям</a>"
-    return HttpResponse(content)
+      # Безопасно находим категорию
+      category = get_object_or_404(Category, slug=category_slug)
+      # Выбираем только опубликованные статьи, привязанные к этой категории
+      posts = Post.objects.filter(category=category, publishes=True)
+      context = {
+          'category': category,
+          'posts': posts
+      }
+      return render(request, 'blog/category_detail.html', context)
