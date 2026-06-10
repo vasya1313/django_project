@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Главная страница - {{ block.super }}{% endblock %}
+{% block title %}Главная страница — {{ block.super }}{% endblock %}
 
 {% block content %}
 <div class="row">
@@ -21,14 +21,14 @@
             <article class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                     <!-- Заголовок категории (если она есть) -->
-                    <!-- {% if post.category %}
+                    {% if post.category %}
                         <a href="{% url 'blog:category_detail' post.category.id %}" class="text-decoration-none text-primary fw-bold text-uppercase fs-6">
                             {{ post.category.title }}
                         </a>
-                    {% endif %} -->
+                    {% endif %}
 
                     <h3 class="card-title h2 mt-2 fw-bold">
-                        <a href="{% url 'blog:post_detail' post.id %}" class="text-decoration-none text-dark hover-primary"> #арменять на post.slug
+                        <a href="{% url 'blog:post_detail' post.slug %}" class="text-decoration-none text-dark hover-primary">
                             {{ post.title }}
                         </a>
                     </h3>
@@ -44,7 +44,7 @@
                     </p>
 
                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="{% url 'blog:post_detail' post.id %}" class="btn btn-outline-dark"> # арменять на post.slug
+                        <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-outline-dark">
                             Читать далее &rarr;
                         </a>
                     </div>
