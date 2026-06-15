@@ -1,13 +1,21 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
+from slugify import slugify
 
 from blog_app.models import Post, Category
+from blog_app.forms import PostForm, SearchForm
 
 
 def index(request):
+    search_form = SearchForm(data=request.GET)
     # Получаем 5 последних опубликованных постов
-    posts = Post.objects.filter(publishes=True)[:5]
+    posts = Post.objects.filter(publishes=True)
+    if search_form.is_valid():
+        query = search_form.cleaned_data.get('query')
+        posts = posts.filter(title__icontains=query)
+    posts = posts[:5]
     context = {
-        'posts' : posts
+        'posts' : posts,
+        'search_form' : search_form
     }
     return render(request, 'blog/index.html', context)
 
@@ -46,3 +54,16 @@ def category_detail(request, category_slug):
           'posts': posts
       }
       return render(request, 'blog/category_detail.html', context)
+
+
+def post_create(request):
+    if request.method == 'POST':
+        form = PostForm(data=request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.slug = slugify(post.title)
+            post.save()
+            return redirect('blog:index_page')
+    else:
+        form = PostForm()
+    return render(request, "blog/post_create.html", context={'form': form})
