@@ -1,5 +1,5 @@
 from django import forms
-from blog_app.models import Post
+from blog_app.models import Post, Category
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -36,3 +36,15 @@ class SearchForm(forms.Form):
             }
         )
      )
+
+
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = ['title']
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+        labels = {
+            'title': 'Название категории',
+        }
