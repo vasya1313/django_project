@@ -88,3 +88,4 @@ def post_edit(request, post_slug):
     if request.method == 'POST' and form.is_valid():
         post.save()
         return redirect('blog:post_detail', post_slug=post.slug)
+    return render(request, "blog/post_edit.html", context={'form': form})
