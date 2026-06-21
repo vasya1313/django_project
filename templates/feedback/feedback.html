@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Обратная связь — {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-dark text-white p-3">
+                <h1 class="h4 mb-0 fw-bold">📬 Обратная связь</h1>
+            </div>
+            <div class="card-body p-4">
+                <p class="text-muted mb-4">
+                    У вас есть вопросы, предложения или нашли ошибку? Заполните форму ниже, и мы ответим вам в ближайшее время!
+                </p>
+
+                <form method="post" novalidate>
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" for="{{ field.id_for_label }}">
+                                {{ field.label }}
+                            </label>
+                            {{ field }}
+
+                            {% for error in field.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for error in form.non_field_errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <div class="mt-4 pt-3 border-top d-flex gap-2">
+                        <button type="submit" class="btn btn-dark px-4">Отправить сообщение</button>
+                        <a href="{% url 'blog:index_page' %}" class="btn btn-outline-secondary">На главную</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

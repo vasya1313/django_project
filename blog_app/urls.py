@@ -5,7 +5,7 @@ app_name = 'blog_app'
 
 
 urlpatterns = [
-    path("", views.index, name="index_page"), # blog:index_page будет доступно в шаблонах
+    path("", views.IndexView.as_view(), name="index_page"), # blog:index_page будет доступно в шаблонах
     path("posts/", views.PostListView.as_view(), name="posts_list"),
     path("posts/create/", views.PostCreateView.as_view(), name="post_create"),
     path('posts/<slug:post_slug>/edit/', views.PostUpdateView.as_view(), name='post_edit'),
