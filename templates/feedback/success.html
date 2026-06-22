@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Сообщение отправлено — {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+        <div class="card border-0 shadow-sm text-center">
+            <div class="card-body p-5">
+                <div class="mb-4">
+                    <span class="display-1 text-success">✅</span>
+                </div>
+                <h2 class="h3 mb-3 fw-bold">Спасибо!</h2>
+                <p class="fs-5 text-muted mb-4">
+                    Ваше обращение успешно отправлено.<br>
+                    Мы свяжемся с вами в течение 24 часов.
+                </p>
+                <a href="{% url 'blog:index_page' %}" class="btn btn-dark btn-lg px-5">
+                    На главную
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
