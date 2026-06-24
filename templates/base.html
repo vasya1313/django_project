@@ -25,13 +25,19 @@
                         <a class="nav-link" href="{% url 'blog:index_page' %}">Главная</a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" href="{% url 'blog:post_create' %}">Создать статью</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'blog:posts_list' %}">Статьи</a>
                     </li>
-                  <li class="nav-item">
+                    <li class="nav-item">
                       <a class="nav-link" href="{% url 'blog:categories_list' %}">Категории</a>
                     </li>
-                  <li class="nav-item">
+                    <li class="nav-item">
                       <a class="nav-link" href="{% url 'feedback:feedback_form' %}">Обратная связь</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'blog:about' %}">О проекте</a>
                     </li>
                 </ul>
             </div>
