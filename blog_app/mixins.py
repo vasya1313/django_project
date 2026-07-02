@@ -18,3 +18,12 @@ class StaffRequiredMixin:
             raise PermissionDenied('Доступ только для сотрудников!')
 
         return super().dispatch(request, *args, **kwargs)
+
+
+class AuthorRequiredMixin:
+    def dispatch(self, request, *args, **kwargs):
+        obj = self.get_object()
+        if obj.author != self.request.user.username:
+            raise PermissionDenied("Вы не являетесь автором этого поста!")
+
+        return super().dispatch(request, *args, **kwargs)

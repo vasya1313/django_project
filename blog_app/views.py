@@ -5,7 +5,7 @@ from django.db.models import F
 
 from blog_app.models import Post, Category
 from blog_app.forms import PostForm, CategoryForm
-from blog_app.mixins import TitleMixin, StaffRequiredMixin
+from blog_app.mixins import TitleMixin, StaffRequiredMixin, AuthorRequiredMixin
 
 
 # def index(request):
@@ -169,12 +169,10 @@ class CategoryCreateView(CreateView):
 #         return redirect('blog:post_detail', post_slug=post.slug)
 #     return render(request, "blog/post_edit.html", context={'form': form})
 
-class PostUpdateView(PostFormBase, UpdateView):
-    # model = Post
-    # form_class = PostForm
+class PostUpdateView(AuthorRequiredMixin, PostFormBase, UpdateView):
     template_name = "blog/post_edit.html"
     slug_url_kwarg = 'post_slug'
-    # success_url = reverse_lazy('blog:index_page')
+
 
 class PostDeleteView(DeleteView):
     model = Post
