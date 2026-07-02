@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Вход — DevBlog{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="fw-bold mb-4 text-center">Вход</h2>
+                <form method="post" novalidate>
+                    {% csrf_token %}
+
+                    <!-- Общие ошибки формы (например, неверный логин/пароль) -->
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form.non_field_errors|join:", " }}
+                        </div>
+                    {% endif %}
+
+                    <!-- Вывод полей без применения стилей к инпутам -->
+                    {% for field in form %}
+                        <div class="mb-3">
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-danger small mt-1">{{ field.errors|join:", " }}</div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
+                    <button type="submit" class="btn btn-dark w-100 py-2">Войти</button>
+
+                    <!-- Ссылка на восстановление пароля -->
+                    <div class="mt-2 text-center">
+                        <small><a href="{% url 'users:password_reset' %}" class="text-decoration-none">Забыли пароль?</a></small>
+                    </div>
+                </form>
+
+                <div class="mt-3 text-center">
+                    <small>
+                        Нет аккаунта?
+                        <a href="{% url 'users:register' %}" class="text-decoration-none">Зарегистрироваться</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
