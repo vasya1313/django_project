@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="{% url 'blog:index_page' %}">
-                    🚀 DevBlog
+                🚀 DevBlog
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -25,20 +25,39 @@
                         <a class="nav-link" href="{% url 'blog:index_page' %}">Главная</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{% url 'blog:post_create' %}">Создать статью</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'blog:posts_list' %}">Статьи</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{% url 'blog:categories_list' %}">Категории</a>
+                        <a class="nav-link" href="{% url 'blog:post_create' %}">Создать статью</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{% url 'feedback:feedback_form' %}">Обратная связь</a>
+                        <a class="nav-link" href="{% url 'blog:about' %}">О проекте</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'blog:about' %}">О проекте</a>
-                    </li>
+
+                    <!-- Блок пользователя -->
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ user.username }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li>
+                                    <form method="post" action="{% url 'users:logout' %}" style="display: inline;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="dropdown-item">Выйти</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'users:login' %}">Вход</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'users:register' %}">Регистрация</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
