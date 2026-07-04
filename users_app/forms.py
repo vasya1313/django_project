@@ -7,7 +7,22 @@ from .models import Profile
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ("bio", "social_link", "avatar")
+        fields = ['bio', 'social_link', 'avatar']
+        widgets = {
+            'bio': forms.Textarea(attrs={
+                'class': 'form-control',
+                'rows': 4,
+                'placeholder': 'Расскажите немного о себе...'
+            }),
+            'social_link': forms.URLInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'https://example.com/username'
+            }),
+            # ClearableFileInput добавляет кнопку выбора файла и галочку удаления текущего файла
+            'avatar': forms.ClearableFileInput(attrs={
+                'class': 'form-control'
+            }),
+        }
 
 
 class CustomLoginForm(AuthenticationForm):

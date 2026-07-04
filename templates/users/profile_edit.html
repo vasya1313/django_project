@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Редактирование профиля{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <h2 class="card-title text-center mb-4">Редактирование профиля</h2>
+
+                    <form method="post" enctype="multipart/form-data" novalidate>
+                        {% csrf_token %}
+
+                        {# Вывод текущей аватарки (если она есть) перед формой #}
+                        {% if form.instance.avatar %}
+                            <div class="text-center mb-4">
+                                <img src="{{ form.instance.avatar.url }}" alt="Текущий аватар" class="rounded-circle shadow" width="120" height="120" style="object-fit: cover;">
+                                <div class="form-text mt-1 text-muted">Текущее изображение профиля</div>
+                            </div>
+                        {% endif %}
+
+                        {% for field in form %}
+                            <div class="mb-3">
+                                <label for="{{ field.id_for_label }}" class="form-label">
+                                    {{ field.label }}
+                                </label>
+                                {{ field }}
+                                {% for error in field.errors %}
+                                    <div class="text-danger mt-1">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+
+                        <button type="submit" class="btn btn-primary w-100 mt-3">
+                            Сохранить профиль
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- НОВЫЙ БЛОК: Статьи пользователя -->
+            <div class="card shadow mt-4 p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="fw-bold mb-0">📝 Мои статьи</h4>
+                    <a href="{% url 'blog:post_create' %}" class="btn btn-sm btn-success">
+                        + Новая статья
+                    </a>
+                </div>
+
+                {% with posts=user.post_set.all %}
+                    {% if posts %}
+                        <ul class="list-unstyled">
+                            {% for post in posts|slice:":5" %}
+                                <li class="mb-3 pb-2 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="{% url 'blog:post_detail' post.slug %}" class="text-decoration-none fw-semibold text-dark">
+                                            {{ post.title }}
+                                        </a>
+                                        <div class="btn-group btn-group-sm">
+                                            <a href="{% url 'blog:post_edit' post.slug %}" class="btn btn-outline-warning">
+                                                ✏️
+                                            </a>
+                                            <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-outline-primary">
+                                                👁️
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="text-muted small">
+                                        {{ post.created_at|date:"d M Y" }}
+                                        {% if post.category %}
+                                            · <span class="badge bg-secondary">{{ post.category.title }}</span>
+                                        {% endif %}
+                                        · Статус: {% if post.is_published %}✅ Опубликовано{% else %}⏳ Черновик{% endif %}
+                                    </div>
+                                </li>
+                            {% empty %}
+                                <li class="text-muted">Вы ещё не написали ни одной статьи.</li>
+                            {% endfor %}
+                        </ul>
+                        {% if posts.count > 5 %}
+                            <a href="{% url 'blog:posts_list' %}?author={{ user.id }}" class="btn btn-outline-dark btn-sm mt-2">
+                                Все мои статьи →
+                            </a>
+                        {% endif %}
+                    {% else %}
+                        <p class="text-muted">Вы ещё не написали ни одной статьи.</p>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

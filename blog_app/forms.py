@@ -4,16 +4,18 @@ from blog_app.models import Post, Category
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content', 'category']
+        fields = ['title', 'content', 'category', 'image']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
             'category': forms.Select(attrs={'class': 'form-select'}),
+            'image': forms.FileInput(attrs={'class': 'form-control'}),
         }
         labels = {
             'title': 'Заголовок статьи',
             'content': 'Содержание статьи',
             'category': 'Категория',
+            'image': 'Изображение для поста',
         }
 
     def clean_title(self):

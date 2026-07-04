@@ -1,3 +1,4 @@
+from PIL import Image
 from django.db import models
 
 # Create your models here.
@@ -26,6 +27,11 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
     views_count = models.PositiveIntegerField(default=0, verbose_name='Количество просмотров')
     category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='posts', verbose_name='Категория')
+    image = models.ImageField(
+        upload_to='posts/',
+        blank=True, null=True,
+        verbose_name='Обложка'
+        )
 
 
     class Meta:
@@ -42,3 +48,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+    def save(self, *args, **kwargs):
+            super().save(*args, **kwargs)
+            if self.image:
+                img = Image.open(self.image.path)
+                if img.height > 1200 or img.width > 1200:
+                    output_size = (1200, 1200)
+                    img.thumbnail(output_size)
+                    img.save(self.image.path)
