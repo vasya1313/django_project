@@ -9,6 +9,7 @@ urlpatterns = [
     path('feedback/', include('feedback_app.urls')),
     path('', include("blog_app.urls", namespace="blog")),
     path('users/', include('users_app.urls')),
+    path('api/v1/', include('drf_app.urls')),
 ]
 
 if settings.DEBUG:
