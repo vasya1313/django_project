@@ -28,7 +28,7 @@
                         <a class="nav-link" href="{% url 'blog:posts_list' %}">Статьи</a>
                     </li>
 
-                    <!-- НОВЫЙ ПУНКТ: ВЫПАДАЮЩИЙ СПИСОК КАТЕГОРИЙ -->
+                    <!-- Выпадающий список категорий -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
@@ -86,14 +86,38 @@
 
 <main class="container my-5 flex-grow-1">
     {% block content %}
-    <!-- Контент страницы будет вставляться сюда -->
     {% endblock %}
 </main>
 
 <footer class="bg-dark text-light py-4 mt-auto">
-    <div class="container text-center">
-        <p class="mb-1">&copy; 2026 Учебный Django-проект.</p>
-        <small class="text-muted">Сделано с любовью на курсе по Django</small>
+    <div class="container">
+        <!-- Статистика -->
+        <div class="row text-center gy-2 text-white">
+            <div class="col-6 col-md-3">
+                <span class="d-block fs-4 fw-bold">{{ total_posts|default:"0" }}</span>
+                <small>Статей</small>
+            </div>
+            <div class="col-6 col-md-3">
+                <span class="d-block fs-4 fw-bold">{{ total_categories|default:"0" }}</span>
+                <small>Категорий</small>
+            </div>
+            <div class="col-6 col-md-3">
+                <span class="d-block fs-4 fw-bold">{{ total_users|default:"0" }}</span>
+                <small>Пользователей</small>
+            </div>
+            <div class="col-6 col-md-3">
+                <span class="d-block fs-4 fw-bold">{{ total_comments|default:"0" }}</span>
+                <small>Комментариев</small>
+            </div>
+        </div>
+
+        <hr class="border-light opacity-25 my-3">
+
+        <!-- Копирайт -->
+        <div class="text-center">
+            <p class="mb-1">&copy; 2026 Учебный Django-проект.</p>
+            <small class="text-muted">Сделано с любовью на курсе по Django</small>
+        </div>
     </div>
 </footer>
 
