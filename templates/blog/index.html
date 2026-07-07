@@ -7,7 +7,6 @@
 
 {% block content %}
     <div class="row">
-        <!-- Левая колонка с приветствием и списком постов -->
         <div class="col-lg-8">
             <div class="p-5 mb-4 bg-white rounded-3 shadow-sm border">
                 <div class="container-fluid py-2">
@@ -22,9 +21,13 @@
             <h2 class="mb-4 fw-bold">Последние публикации</h2>
 
             {% for post in latest_posts %}
-                <article class="card mb-4 border-0 shadow-sm">
+                <article class="card mb-4 border-0 shadow-sm overflow-hidden">
+                    <!-- Изображение-превью (если есть) -->
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    {% endif %}
+
                     <div class="card-body p-4">
-                        <!-- Заголовок категории (если она есть) -->
                         {% if post.category %}
                             <a href="{% url 'blog:category_detail' post.category.slug %}"
                                class="text-decoration-none text-primary fw-bold text-uppercase fs-6">
@@ -39,12 +42,10 @@
                             </a>
                         </h3>
 
-                        <!-- Метаинформация -->
                         <div class="text-muted small mb-3">
                             Опубликовано: {{ post.created_at|date:"d M Y в H:i" }} | Автор: {{ post.author }}
                         </div>
 
-                        <!-- Обрезка анонса статьи -->
                         <p class="card-text text-secondary fs-5">
                             {{ post.content|truncatewords:25 }}
                         </p>
@@ -63,7 +64,6 @@
             {% endfor %}
         </div>
 
-        <!-- Правая колонка: Сайдбар с категориями -->
         <div class="col-lg-4">
             <div class="card border-0 shadow-sm mb-4">
                 <div class="card-body p-4">
