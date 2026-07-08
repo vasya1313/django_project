@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from blog_app.models import Post
+from blog_app.models import Post, Category
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -7,3 +7,14 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = ('id', 'title', 'slug', 'content', 'category', 'author', 'publishes', 'created_at')
         read_only_fields = ('id', 'publishes', 'created_at')
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    posts_count = serializers.SerializerMethodField()
+    class Meta:
+        model = Category
+        fields = ('id', 'title', 'slug', 'posts_count')
+        read_only_fields = ('id', 'posts_count')
+
+    def get_posts_count(self, obj):
+        return obj.posts.filter(publishes=True).count()
