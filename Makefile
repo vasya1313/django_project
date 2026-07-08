@@ -21,3 +21,6 @@ delete_post:
 
 update_post:
 	uv run manage.py update_posts --id $(id) --title "$(title)"
+
+test:
+	uv run manage.py test
