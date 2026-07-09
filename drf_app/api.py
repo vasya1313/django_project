@@ -1,9 +1,10 @@
-from rest_framework import permissions, viewsets
-from blog_app.models import Post
-from drf_app.serializers import PostSerializer
+from rest_framework import permissions, viewsets, generics
+from blog_app.models import Post, Category
+from drf_app.serializers import PostSerializer,  CategorySerializer
 from slugify import slugify
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
+
 
 
 # class PostListCreateAPIView(generics.ListCreateAPIView):
@@ -28,6 +29,7 @@ class PostViewSet(viewsets.ModelViewSet):
     ordering_filter = ['created_at', 'title']
 
 
+
     def perform_create(self, serializer):
         title = serializer.validated_data.get('title')
         slug = slugify(title)
@@ -35,3 +37,13 @@ class PostViewSet(viewsets.ModelViewSet):
             slug=slug,
             author=self.request.user
         )
+
+
+class CategoryListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+
+class CategoryRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
