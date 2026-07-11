@@ -38,7 +38,7 @@ class PostViewTest(TestCase):
     def test_homepage_shows_published_posts(self):
         """Проверяем, что опубликованный пост выводится в HTML-коде главной страницы."""
         response = self.client.get(reverse('blog:index_page'))
-        self.assertContains(response, 'Пост про дизайн')
+        self.assertContains(response, self.post.title)
 
 
     def test_homepage_hides_draft_posts(self):
@@ -59,20 +59,20 @@ class PostViewTest(TestCase):
 
     def test_post_detail_page_status_code(self):
         """Убеждаемся, что страница детального просмотра статьи доступна по её slug."""
-        response = self.client.get(reverse('blog:post_detail', kwargs={'slug': self.post.slug}))
+        response = self.client.get(reverse('blog:post_detail', kwargs={'post_slug': self.post.slug}))
         self.assertEqual(response.status_code, 200)
 
     def test_post_detail_page_template(self):
         """Проверяем использование верного шаблона для детальной страницы."""
-        response = self.client.get(reverse('blog:post_detail', kwargs={'slug': self.post.slug}))
+        response = self.client.get(reverse('blog:post_detail', kwargs={'post_slug': self.post.slug}))
         self.assertTemplateUsed(response, 'blog/post_detail.html')
 
     def test_post_detail_page_context(self):
         """Убеждаемся, что в контекст шаблона передается именно наш объект статьи."""
-        response = self.client.get(reverse('blog:post_detail', kwargs={'slug': self.post.slug}))
+        response = self.client.get(reverse('blog:post_detail', kwargs={'post_slug': self.post.slug}))
         self.assertEqual(response.context['post'], self.post)
 
     def test_post_detail_returns_404(self):
         """Проверяем, что обращение по несуществующему slug возвращает ошибку 404."""
-        response = self.client.get(reverse('blog:post_detail', kwargs={'slug': 'non-existent-slug'}))
+        response = self.client.get(reverse('blog:post_detail', kwargs={'post_slug': 'non-existent-slug'}))
         self.assertEqual(response.status_code, 404)
