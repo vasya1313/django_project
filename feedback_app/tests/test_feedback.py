@@ -52,4 +52,4 @@ class FeedbackViewTests(TestCase):
         self.assertEqual(Feedback.objects.count(), initial_feedback_count)
 
         # Проверяем, что форма вернула ошибку для поля 'email'
-        self.assertFormError(response, 'form', 'email', 'This field is required.')
+        self.assertFormError(response.context['form'], 'email', 'Обязательное поле.')

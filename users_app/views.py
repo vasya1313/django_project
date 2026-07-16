@@ -2,6 +2,7 @@ from django.views.generic import CreateView, DetailView, UpdateView
 from django.contrib.auth.views import LoginView
 # from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from .forms import ProfileForm, CustomLoginForm, CustomUserCreationForm
@@ -14,7 +15,7 @@ class RegisterView(CreateView):
     success_url = reverse_lazy('blog:index_page')
 
 
-class ProfileDetailView(DetailView):
+class ProfileDetailView(LoginRequiredMixin, DetailView):
     model = Profile
     template_name = 'users/profile_detail.html'
 
@@ -28,7 +29,7 @@ class ProfileDetailView(DetailView):
          return profile
 
 
-class ProfileUpdateView(UpdateView):
+class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = Profile
     form_class = ProfileForm
     template_name = 'users/profile_update.html'
@@ -37,7 +38,7 @@ class ProfileUpdateView(UpdateView):
     def get_object(self, queryset=None):
         # get_or_create на случай, если пользователь перешел на страницу
         # редактирования раньше, чем просмотра, и профиль еще не создан.
-        profile, _ = Profile.objects.get_or_create(user=self.request.user)
+        profile, created = Profile.objects.get_or_create(user=self.request.user)
         return profile
 
 
