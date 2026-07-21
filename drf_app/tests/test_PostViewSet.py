@@ -3,15 +3,23 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 from django.contrib.auth.models import User
 from blog_app.models import Post, Category
-from rest_framework_simplejwt.tokens import RefreshToken
 
 
 class PostAPITests(APITestCase):
 
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='password123')
-        self.refresh = RefreshToken.for_user(self.user)
-        self.access_token = str(self.refresh.access_token)
+        self.username = 'testuser'
+        self.password = 'password123'
+        self.user = User.objects.create_user(username=self.username, password=self.password)
+
+        auth_url = reverse('token_obtain_pair')
+        auth_data = {
+            'username': self.username,
+            'password': self.password
+        }
+        auth_response = self.client.post(auth_url, auth_data, format='json')
+
+        self.access_token = auth_response.data['access']
 
         self.category = Category.objects.create(title='Тестовая категория', slug='test-category')
         Post.objects.create(
