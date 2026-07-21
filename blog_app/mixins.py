@@ -1,4 +1,5 @@
 from django.core.exceptions import PermissionDenied
+from django.contrib.auth.mixins import AccessMixin
 
 
 class TitleMixin:
@@ -12,18 +13,19 @@ class TitleMixin:
         return context
 
 
-class StaffRequiredMixin:
+class StaffRequiredMixin(AccessMixin):
     def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated or not request.user.is_staff:
+        if not request.user.is_authenticated:
+            return self.handle_no_permission()
+        if not request.user.is_staff:
             raise PermissionDenied('Доступ только для сотрудников!')
-
         return super().dispatch(request, *args, **kwargs)
 
 
 class AuthorRequiredMixin:
     def dispatch(self, request, *args, **kwargs):
         obj = self.get_object()
-        if obj.author != self.request.user.username:
+        if obj.author != self.request.user:
             raise PermissionDenied("Вы не являетесь автором этого поста!")
 
         return super().dispatch(request, *args, **kwargs)
