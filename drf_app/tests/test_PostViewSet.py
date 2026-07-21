@@ -38,7 +38,7 @@ class PostAPITests(APITestCase):
         access_token = auth_response.data['access']
 
         headers = {
-            'HTTP_AUTHORIZATION': f'Bearer {access_token}'
+            'Authorization': f'Bearer {access_token}'
         }
 
         url = reverse('drf:post-list')
@@ -47,7 +47,7 @@ class PostAPITests(APITestCase):
             'content': 'Текст нового поста.',
             'category': self.category.pk
         }
-        response = self.client.post(url, data, format='json', **headers)
+        response = self.client.post(url, data, format='json', headers=headers)
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertTrue(Post.objects.filter(title=data['title']).exists())
