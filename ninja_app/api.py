@@ -1,8 +1,9 @@
 from ninja import Router
 from ninja.errors import HttpError
 from blog_app.models import Post, Category
-from ninja_app.schemas import PostOutSchema, PostInSchema, CategoryOutSchema, CategoryInSchema
+from ninja_app.schemas import PostOutSchema, PostInSchema, CategoryOutSchema, CategoryInSchema, PostSearchResultSchema
 from slugify import slugify
+from django.contrib.postgres.search import SearchQuery, SearchVector, SearchRank, SearchHeadline
 
 
 router = Router()
@@ -23,6 +24,46 @@ async def list_post(request, search: str | None=None, category_id: int | None=No
 
     posts = [post async for post in query_set]
     return posts
+
+@router.get('/posts/serch', response=list[PostSearchResultSchema])
+async def search_post(request, query: str):
+    if not query.strip():
+        return []
+
+    vector = (SearchVector("title", weight="A", config="russian") + SearchVector("title", weight="B", config="russian"))
+    search_query = SearchQuery(query, config="russian")
+    headline = SearchHeadline(
+        "content",
+        search_query,
+        config="russian",
+        start_sel="<b>",
+        stop_sel="</b>",
+        max_words=15,
+        min_words=5
+    )
+
+    queryset = (
+        Post.objects.filter(publishes=True)
+        .annotate(
+            rank=SearchRank(vector, search_query),
+            headline=headline
+            )
+            .filter(rank__gte=0.01)
+            .order_by("-rank")
+    )
+
+    results = [
+        PostSearchResultSchema(
+            id=post.id ,
+            title=post.title,
+            slug=post.slug,
+            headline=post.headline,
+            rank=float(post.rank)
+        )
+        async for post in queryset
+    ]
+    return results
+
 
 @router.get('/posts/{post_id}', response=PostOutSchema)
 async def get_post(request, post_id: int):

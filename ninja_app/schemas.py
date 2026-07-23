@@ -1,4 +1,4 @@
-from ninja import ModelSchema
+from ninja import ModelSchema, Schema
 from blog_app.models import Post, Category
 
 
@@ -24,3 +24,11 @@ class CategoryInSchema(ModelSchema):
     class Meta:
         model = Category
         fields = ('title',)
+
+
+class PostSearchResultSchema(Schema):
+    id: int
+    title: str
+    slug: str
+    headline: str
+    rank: float
