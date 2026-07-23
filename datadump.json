@@ -1,0 +1,1376 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$O3u6hybSrnDMkp2m1avAPk$5sM37Q4pxesT6pg0qnSSVRolJe2BKwCaZnLuaKmKgwY=",
+        "last_login": "2026-06-29T17:29:10Z",
+        "is_superuser": true,
+        "username": "asdf",
+        "first_name": "",
+        "last_name": "",
+        "email": "vas13@yandex.ru",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-05-27T17:39:58Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$wxsDiOyYgfBYV60ryWwle2$Dbal9rycqOlquHmDoJaZwk1H3Yi0w87mk0yEfMKMU3g=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Петр",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-06-24T16:58:59.023Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$GPSP9Bq81LnEIh8TtZ86bi$T0TH/A1KI2nM0x3kkmnoq63JyWPQoe2wj3x+JfsClsk=",
+        "last_login": "2026-06-29T16:20:10.909Z",
+        "is_superuser": true,
+        "username": "vasya",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-06-29T16:19:53.361Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$xxVgdO8g8yZixTGPj3BaO1$fXjy/gsHp3dE17XuOFTY9AhTrkQ3Rj9Z9Ku7PXsvIEw=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Семен",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-07-04T05:40:21.133Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$alGh72BOCbkENmeCjqaI0a$Mq6XVFpER2jyVqEuPj/hVk/XuXrXAQEv3Kenyf19YeY=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "aaa",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-07-08T17:31:36.488Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$6OS92D1YWbdjKbad9Iqlny$mkjLHaAXtslmkkaFzASMVLaecqCCOwVsaOSurUOQ+j8=",
+        "last_login": "2026-07-16T18:58:56.780Z",
+        "is_superuser": true,
+        "username": "Vas",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-07-10T08:48:48.529Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "dk40l0c4x89fpfse4qfcb1n9z11h1ouj",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hBoSwdcuvcMzTDMSNVAUtqV8e7apAvd_vfef6kJtzVPW-NlmpM6K6tOv1tEenDZQbpjuVVNtazLHPWu6IM2fa2Jn5fD_TvI2PK3hmiEETqKNBoR9s6SASMWwFMfUgDxxg3YcQqD9GPwglFGJnEEBnr1_gD9QDh-:1weFnC:lYWqatoYlLlg3HYw2GPtKI43JicQ_2h6cLYE-Spiruw",
+        "expire_date": "2026-07-13T17:29:10.316Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "kek3vpvb1owq5mdmtpw9zmy0tce01r2z",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hDoCFNcuu8ZCDCDVA0kpV0Z765NutDtf-_9l_BhW4vfOi9-JnERWpx-txjSg-sO6B7qrcnU6rrMUe6KPGiXUyN-Xg_376CEXr615dE6nW1GcswMMCjMWSU0ZAgyAwIo0srFpM1AEM9BR4cYIKnRWhTvD-jDN68:1wZVP7:5vLffEaVF4OHsjw2PNVmGI2uz3ddcdFksj9hD0npIHo",
+        "expire_date": "2026-06-30T15:08:41.467Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "oh63tihkz2t5pygvpuk6p1byr6zkkm6x",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hDoCFNcuu8ZCDCDVA0kpV0Z765NutDtf-_9l_BhW4vfOi9-JnERWpx-txjSg-sO6B7qrcnU6rrMUe6KPGiXUyN-Xg_376CEXr615dE6nW1GcswMMCjMWSU0ZAgyAwIo0srFpM1AEM9BR4cYIKnRWhTvD-jDN68:1wSZLj:0rNIfqUiEpE2WCLMMVWxSzN7Aswr3fnY9S68B1fLKWo",
+        "expire_date": "2026-06-11T11:56:31.250Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "z0g35b642jf83ke0zmcax34ocszj10ew",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hDoCFNcuu8ZCDCDVA0kpV0Z765NutDtf-_9l_BhW4vfOi9-JnERWpx-txjSg-sO6B7qrcnU6rrMUe6KPGiXUyN-Xg_376CEXr615dE6nW1GcswMMCjMWSU0ZAgyAwIo0srFpM1AEM9BR4cYIKnRWhTvD-jDN68:1wSIFk:dGCc6yP44XjKxlG_aSddJwWg7bFXpFGqXnbSNldRDkA",
+        "expire_date": "2026-06-10T17:41:12.174Z"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 1,
+    "fields": {
+        "title": "Окружающий мир",
+        "slug": "okruzhayushij-mir"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 2,
+    "fields": {
+        "title": "Машины",
+        "slug": "derevya"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 3,
+    "fields": {
+        "title": "Велосипеды",
+        "slug": "velosipedy"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 5,
+    "fields": {
+        "title": "Самолеты",
+        "slug": "samolety"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 6,
+    "fields": {
+        "title": "Самокаты",
+        "slug": "samokaty"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 7,
+    "fields": {
+        "title": "Одежда",
+        "slug": "odezhda"
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 1,
+    "fields": {
+        "title": "Тигры",
+        "slug": "tigry",
+        "content": "Тигры большие и красивые",
+        "publishes": false,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-05-27T17:42:34.501Z",
+        "updated_at": "2026-05-27T17:42:34.501Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 2,
+    "fields": {
+        "title": "Слоны",
+        "slug": "slony",
+        "content": "Слоны большие",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-05-27T17:43:31.996Z",
+        "updated_at": "2026-05-27T17:43:31.996Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 3,
+    "fields": {
+        "title": "Мышки",
+        "slug": "myshki",
+        "content": "Мышки они маленькие",
+        "publishes": false,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-05-28T12:06:18.749Z",
+        "updated_at": "2026-05-28T12:06:18.749Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 4,
+    "fields": {
+        "title": "Змеи",
+        "slug": "zmei",
+        "content": "Змеи - ядовитые",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-05-30T11:55:47.044Z",
+        "updated_at": "2026-05-30T11:55:47.044Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 5,
+    "fields": {
+        "title": "Пингвины",
+        "slug": "pingviny",
+        "content": "Пингвины живут на северном полюсе",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-05-30T11:56:28.726Z",
+        "updated_at": "2026-05-30T11:56:28.726Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 6,
+    "fields": {
+        "title": "Медведь бурый",
+        "slug": "medved-buryj",
+        "content": "Медведь обитает в лесу",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-05-30T11:57:12.964Z",
+        "updated_at": "2026-05-30T11:57:12.964Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 7,
+    "fields": {
+        "title": "Жираф",
+        "slug": "zhiraf",
+        "content": "Жираф большой",
+        "publishes": false,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-05-30T11:58:00.479Z",
+        "updated_at": "2026-05-30T11:58:00.479Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 8,
+    "fields": {
+        "title": "Попугай",
+        "slug": "popugaj",
+        "content": "Попугаи повторяют за человеком",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-05-30T11:59:02.718Z",
+        "updated_at": "2026-06-10T14:36:14.880Z",
+        "views_count": 1,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 9,
+    "fields": {
+        "title": "Крокодил",
+        "slug": "krokodil",
+        "content": "Крокодил обитает в воде",
+        "publishes": false,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-05-30T11:59:35.992Z",
+        "updated_at": "2026-05-30T11:59:35.992Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 11,
+    "fields": {
+        "title": "Зербра",
+        "slug": "zerbra",
+        "content": "Зебры полосатые",
+        "publishes": false,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-05-30T12:01:11.676Z",
+        "updated_at": "2026-05-30T12:01:11.676Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 13,
+    "fields": {
+        "title": "Форд",
+        "slug": "ford",
+        "content": "Американская машина",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-06-05T12:07:26.267Z",
+        "updated_at": "2026-06-10T14:37:39.479Z",
+        "views_count": 2,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 14,
+    "fields": {
+        "title": "Лада",
+        "slug": "lada",
+        "content": "Руссская машина",
+        "publishes": false,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-06-05T12:07:48.152Z",
+        "updated_at": "2026-06-05T12:07:48.152Z",
+        "views_count": 0,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 15,
+    "fields": {
+        "title": "Ниссан",
+        "slug": "nissan",
+        "content": "Японская машина",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-06-05T12:08:49.039Z",
+        "updated_at": "2026-06-05T12:08:49.039Z",
+        "views_count": 0,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 16,
+    "fields": {
+        "title": "Ауди",
+        "slug": "audi",
+        "content": "Немецкая машина",
+        "publishes": false,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-06-05T12:09:16.113Z",
+        "updated_at": "2026-06-05T12:09:16.114Z",
+        "views_count": 0,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 17,
+    "fields": {
+        "title": "Горный велосипед",
+        "slug": "gornyj-velosiped",
+        "content": "Для горных дорог",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-06-05T12:10:27.553Z",
+        "updated_at": "2026-06-05T12:10:27.553Z",
+        "views_count": 0,
+        "category": 3,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 18,
+    "fields": {
+        "title": "Шоссейный велосипед",
+        "slug": "shossejnyj-velosiped",
+        "content": "Для ровного покрытия",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-06-05T12:11:17.134Z",
+        "updated_at": "2026-06-10T14:41:17.574Z",
+        "views_count": 6,
+        "category": 3,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 19,
+    "fields": {
+        "title": "Детский велосипед",
+        "slug": "detskij-velosiped",
+        "content": "Для детей",
+        "publishes": false,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-06-05T12:11:36.177Z",
+        "updated_at": "2026-06-05T12:11:36.177Z",
+        "views_count": 0,
+        "category": 3,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 32,
+    "fields": {
+        "title": "Белки",
+        "slug": "belki",
+        "content": "Любят орешки",
+        "publishes": false,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-06-07T09:49:04.314Z",
+        "updated_at": "2026-06-07T09:49:04.314Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 33,
+    "fields": {
+        "title": "Муровей",
+        "slug": "murovei",
+        "content": "Муровьи маленькие",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-06-10T17:39:26.757Z",
+        "updated_at": "2026-06-10T17:42:03.953Z",
+        "views_count": 2,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 34,
+    "fields": {
+        "title": "Комар",
+        "slug": "komar",
+        "content": "Комвры пьют кровь и жужат над ухом",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-06-15T17:48:25.965Z",
+        "updated_at": "2026-06-16T16:34:08.088Z",
+        "views_count": 3,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 36,
+    "fields": {
+        "title": "Новая",
+        "slug": "novaia",
+        "content": "new post",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-06-21T08:17:06.858Z",
+        "updated_at": "2026-06-21T08:17:27.963Z",
+        "views_count": 5,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 37,
+    "fields": {
+        "title": "Статья Петра",
+        "slug": "statya-petra",
+        "content": "тут Петр написал статью про самокаты",
+        "publishes": true,
+        "author": [
+            "Петр"
+        ],
+        "created_at": "2026-06-29T14:21:18.467Z",
+        "updated_at": "2026-06-29T14:21:18.467Z",
+        "views_count": 6,
+        "category": 6,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 38,
+    "fields": {
+        "title": "Листочки",
+        "slug": "listochki",
+        "content": "Зеленые листочки",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-07-03T14:29:52.789Z",
+        "updated_at": "2026-07-03T14:30:20.266Z",
+        "views_count": 6,
+        "category": 1,
+        "image": "posts/vlaznye-list-a-rastenia-monstera-deliciosa-v-sadu.jpg"
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 39,
+    "fields": {
+        "title": "Название",
+        "slug": "nazvanie",
+        "content": "Статья про названия",
+        "publishes": true,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-07-04T07:50:54.413Z",
+        "updated_at": "2026-07-04T07:51:33.686Z",
+        "views_count": 3,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 40,
+    "fields": {
+        "title": "Названи11е",
+        "slug": "nazvani11e",
+        "content": "Статья про названия",
+        "publishes": false,
+        "author": [
+            "aaa"
+        ],
+        "created_at": "2026-07-08T17:34:50.478Z",
+        "updated_at": "2026-07-08T17:34:50.478Z",
+        "views_count": 0,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 41,
+    "fields": {
+        "title": "Ferrari",
+        "slug": "ferrari",
+        "content": "Ferrari красаная",
+        "publishes": false,
+        "author": [
+            "Vas"
+        ],
+        "created_at": "2026-07-10T08:50:42.355Z",
+        "updated_at": "2026-07-10T08:50:42.355Z",
+        "views_count": 0,
+        "category": 2,
+        "image": "posts/ferrari.jpeg"
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 42,
+    "fields": {
+        "title": "Вертолктики",
+        "slug": "vertolktiki",
+        "content": "Вертолетики летают",
+        "publishes": false,
+        "author": [
+            "asdf"
+        ],
+        "created_at": "2026-07-11T08:14:02.125Z",
+        "updated_at": "2026-07-11T08:14:02.125Z",
+        "views_count": 0,
+        "category": 3,
+        "image": ""
+    }
+},
+{
+    "model": "feedback_app.feedback",
+    "pk": 1,
+    "fields": {
+        "name": "Аркадий",
+        "email": "ark@ya.ru",
+        "message": "Жалоба",
+        "subject": "complaint",
+        "created_at": "2026-06-22T17:20:36.849Z"
+    }
+},
+{
+    "model": "feedback_app.feedback",
+    "pk": 2,
+    "fields": {
+        "name": "Петр",
+        "email": "petya@mail.ru",
+        "message": "Предлагаю предложение",
+        "subject": "offer",
+        "created_at": "2026-06-22T18:04:39.719Z"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2026-05-27T17:41:46.182Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "category"
+        ],
+        "object_id": "1",
+        "object_repr": "Category object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2026-05-27T17:42:34.502Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "1",
+        "object_repr": "Post object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2026-05-27T17:43:31.997Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "2",
+        "object_repr": "Post object (2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2026-05-28T12:06:18.750Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "3",
+        "object_repr": "Мышки",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2026-05-30T08:02:19.536Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "3",
+        "object_repr": "Мышки",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2026-05-30T08:02:19.536Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "2",
+        "object_repr": "Слоны",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2026-05-30T08:02:19.536Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "1",
+        "object_repr": "Тигры",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2026-05-30T11:55:47.045Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "4",
+        "object_repr": "Змеи",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2026-05-30T11:56:28.727Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "5",
+        "object_repr": "Пингвины",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2026-05-30T11:57:12.966Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "6",
+        "object_repr": "Медведь бурый",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2026-05-30T11:58:00.480Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "7",
+        "object_repr": "Жираф",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2026-05-30T11:59:02.719Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "8",
+        "object_repr": "Попугай",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2026-05-30T11:59:35.993Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "9",
+        "object_repr": "Крокодил",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2026-05-30T12:00:08.514Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "10",
+        "object_repr": "Ламма",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2026-05-30T12:01:11.677Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "11",
+        "object_repr": "Зербра",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2026-06-05T12:05:03.506Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "category"
+        ],
+        "object_id": "2",
+        "object_repr": "Category object (2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2026-06-05T12:06:51.511Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "category"
+        ],
+        "object_id": "2",
+        "object_repr": "Category object (2)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u043a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2026-06-05T12:07:26.269Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "13",
+        "object_repr": "Форд",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2026-06-05T12:07:48.153Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "14",
+        "object_repr": "Лада",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2026-06-05T12:08:49.040Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "15",
+        "object_repr": "Ниссан",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2026-06-05T12:09:16.115Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "16",
+        "object_repr": "Ауди",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2026-06-05T12:09:57.370Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "category"
+        ],
+        "object_id": "3",
+        "object_repr": "Category object (3)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2026-06-05T12:10:27.554Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "17",
+        "object_repr": "Горный велосипед",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2026-06-05T12:11:17.135Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "18",
+        "object_repr": "Шоссейный велосипед",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2026-06-05T12:11:36.178Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "19",
+        "object_repr": "Детский велосипед",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2026-06-10T17:42:03.954Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "33",
+        "object_repr": "Муровей",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2026-06-15T17:49:16.226Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "34",
+        "object_repr": "Комар",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2026-06-16T15:08:53.618Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "category"
+        ],
+        "object_id": "4",
+        "object_repr": "Category object (4)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2026-06-17T17:17:24.851Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "35",
+        "object_repr": "Машина",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2026-06-21T07:53:19.143Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "1",
+        "object_repr": "asdf",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2026-06-21T08:17:27.964Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "36",
+        "object_repr": "Новая",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2026-06-21T14:29:15.811Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "feedback_app",
+            "feedback"
+        ],
+        "object_id": "1",
+        "object_repr": "Сообщение от Миша (mish@ya.ru)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2026-06-29T14:21:18.469Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "37",
+        "object_repr": "Статья Петра",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2026-06-29T16:21:24.621Z",
+        "user": [
+            "vasya"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "1",
+        "object_repr": "asdf",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2026-06-30T18:15:29.054Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "1",
+        "object_repr": "asdf",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Email address\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2026-07-03T14:30:20.268Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "38",
+        "object_repr": "Листочки",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2026-07-04T05:40:21.402Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "4",
+        "object_repr": "Семен",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2026-07-04T07:51:33.687Z",
+        "user": [
+            "asdf"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "39",
+        "object_repr": "Название",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438\"]}}]"
+    }
+}
+]

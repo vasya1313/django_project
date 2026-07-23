@@ -12,6 +12,7 @@ wheels/
 db.sqlite3
 .vscode
 .DS_Store
+.env
 
 # User-uploaded files
 media/

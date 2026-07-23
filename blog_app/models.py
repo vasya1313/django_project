@@ -1,5 +1,6 @@
 from PIL import Image
 from django.db import models
+from django.contrib.postgres.indexes import GinIndex
 
 # Create your models here.
 class Category(models.Model):
@@ -37,6 +38,13 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'Статья'
         verbose_name_plural = 'Статьи'
+        indexes = [
+            GinIndex(
+                fields=['title', 'content'],
+                name='post_title_content_gin',
+                opclasses=["gin_trgm_ops", "gin_trgm_ops"]
+            )
+        ]
         ordering = ['-created_at']
 
 
