@@ -25,12 +25,16 @@ async def list_post(request, search: str | None=None, category_id: int | None=No
     posts = [post async for post in query_set]
     return posts
 
-@router.get('/posts/serch', response=list[PostSearchResultSchema])
+@router.get('/posts/search', response=list[PostSearchResultSchema])
 async def search_post(request, query: str):
     if not query.strip():
         return []
 
-    vector = (SearchVector("title", weight="A", config="russian") + SearchVector("title", weight="B", config="russian"))
+    vector = (SearchVector("title", weight="A", config="russian") + \
+              SearchVector("content", weight="B", config="russian") + \
+              SearchVector("category__title", weight="C", config="russian") + \
+              SearchVector("author__username", weight="D", config="russian"))
+
     search_query = SearchQuery(query, config="russian")
     headline = SearchHeadline(
         "content",
