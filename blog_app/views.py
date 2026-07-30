@@ -2,6 +2,7 @@ from slugify import slugify
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from django.urls import reverse_lazy
 from django.db.models import F
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank, SearchHeadline
 
 from blog_app.models import Post, Category
 from blog_app.forms import PostForm, CategoryForm
@@ -179,3 +180,45 @@ class PostDeleteView(DeleteView):
     template_name = 'blog/post_delete.html'
     success_url = reverse_lazy('blog:index_page')
     slug_url_kwarg = 'post_slug'
+
+
+class PostSearchView(ListView):
+    model = Post
+    template_name = "blog/post_search.html"
+    context_object_name = "posts"
+    paginate_by = 10
+    publishes_only = True
+
+    def get_queryset(self):
+        query_text = self.request.GET.get("q", "").strip()
+
+        if not query_text:
+            return Post.objects.none()
+
+        vector = (
+            SearchVector("title", weight="A", config="russian")
+            + SearchVector("content", weight="B", config="russian")
+            + SearchVector("category__title", weight="C", config="russian")
+            + SearchVector("author__username", weight="D", config="russian")
+        )
+        search_query = SearchQuery(query_text, config="russian")
+
+        headline = SearchHeadline(
+            "content",
+            search_query,
+            config="russian",
+            start_sel="<b>",
+            stop_sel="</b>",
+        )
+
+        return (
+            Post.objects.filter(publishes=self.publishes_only)
+            .annotate(rank=SearchRank(vector, search_query), headline=headline)
+            .filter(rank__gte=0.01)
+            .order_by("-rank")
+        )
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["query"] = self.request.GET.get("q", "").strip()
+        return context

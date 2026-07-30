@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    {% if query %}Поиск: {{ query }}{% else %}{{ title }}{% endif %} — {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <!-- Блок формы поиска -->
+        <div class="bg-white p-4 rounded-3 border shadow-sm mb-4">
+            <h1 class="h3 fw-bold text-dark mb-3">🔍 Поиск по публикациям</h1>
+            <form method="get" action="{% url 'blog:post_search' %}" class="row g-2">
+                <div class="col-sm-9">
+                    <input type="search"
+                           name="q"
+                           class="form-control form-control-lg"
+                           placeholder="Введите ключевые слова..."
+                           value="{{ query }}"
+                           required>
+                </div>
+                <div class="col-sm-3 d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg fw-semibold">Найти</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Результаты поиска -->
+        {% if query %}
+            <h2 class="h4 fw-bold text-secondary mb-3">
+                Результаты поиска по запросу «<span class="text-dark">{{ query }}</span>»
+            </h2>
+
+            {% for post in posts %}
+                <article class="card mb-4 border-0 shadow-sm overflow-hidden">
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    {% endif %}
+
+                    <div class="card-body p-4">
+                        {% if post.category %}
+                            <a href="{% url 'blog:category_detail' post.category.slug %}"
+                               class="text-decoration-none text-primary fw-bold text-uppercase fs-6">
+                                {{ post.category.title }}
+                            </a>
+                        {% endif %}
+
+                        <h3 class="card-title h2 mt-2 fw-bold">
+                            <a href="{% url 'blog:post_detail' post.slug %}" class="text-decoration-none text-dark hover-primary">
+                                {{ post.title }}
+                            </a>
+                        </h3>
+
+                        <div class="text-muted small mb-3">
+                            Опубликовано: {{ post.created_at|date:"d M Y в H:i" }} | Автор: {{ post.author }}
+                            {% if post.rank %}
+                                | <span class="badge bg-light text-dark border">Релевантность: {{ post.rank|floatformat:2 }}</span>
+                            {% endif %}
+                        </div>
+
+                        <!-- Вывод подсвеченного фрагмента текста с тегами <b> -->
+                        <div class="card-text text-secondary fs-5 mb-3">
+                            {% if post.headline %}
+                                {{ post.headline|safe }}
+                            {% else %}
+                                {{ post.content|truncatewords:25 }}
+                            {% endif %}
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-outline-dark">
+                                Читать далее &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            {% empty %}
+                <div class="alert alert-warning border-0 shadow-sm p-4" role="alert">
+                    <h4 class="alert-heading fw-bold mb-2">Ничего не найдено 😔</h4>
+                    <p class="mb-0">По вашему запросу <strong>«{{ query }}»</strong> нет подходящих публикаций. Попробуйте изменить формулировку.</p>
+                </div>
+            {% endfor %}
+
+            <!-- Пагинация из общего инклюда -->
+            {% include 'includes/pagination.html' %}
+
+        {% else %}
+            <div class="alert alert-info border-0 shadow-sm p-4" role="alert">
+                Введите поисковый запрос в поле выше, чтобы найти статьи.
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
