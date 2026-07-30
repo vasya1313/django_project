@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from ninja import NinjaAPI
-from ninja_app import api
+from ninja_app import api, auth_routes
 
 
 ninja_api = NinjaAPI(
@@ -13,6 +13,7 @@ ninja_api = NinjaAPI(
 )
 
 ninja_api.add_router('/', api.router)
+ninja_api.add_router("/auth", auth_routes.auth_router)
 
 
 urlpatterns = [
